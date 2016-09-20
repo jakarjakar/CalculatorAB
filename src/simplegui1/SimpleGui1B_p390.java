@@ -26,8 +26,9 @@ public class SimpleGui1B_p390 implements ActionListener  {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        button.setLocation(100, 100);
+//        button.setLocation(10, 10);        
         button.setText("Нажал и отпустил, спасибо.");
+
 
     }
 }
