@@ -3,9 +3,7 @@ import java.awt.event.*;
 
 public class simplegui1 implements ActionListener  {
     JButton button = null;
-    private int numClick = 0;
-
-
+    
     public static void main(String[] args) {
         simplegui1 gui = new simplegui1();
         gui.go();
@@ -29,7 +27,6 @@ public class simplegui1 implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent e) {
         button.setText("Текст после нажатия.");
-        
     }
 }
 
