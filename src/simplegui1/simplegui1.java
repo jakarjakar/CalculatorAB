@@ -1,12 +1,13 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class SimpleGui1B_p390 implements ActionListener  {
+public class simplegui1 implements ActionListener  {
     JButton button = null;
+    private int numClick = 0;
 
 
     public static void main(String[] args) {
-        SimpleGui1B_p390 gui = new SimpleGui1B_p390();
+        simplegui1 gui = new simplegui1();
         gui.go();
 
     }
@@ -24,11 +25,22 @@ public class SimpleGui1B_p390 implements ActionListener  {
         
     }
 
+//По нажатию на кнопку меняется текст.
     @Override
     public void actionPerformed(ActionEvent e) {
-//        button.setLocation(10, 10);        
-        button.setText("Нажал и отпустил, спасибо.");
-
-
+        button.setText("Текст после нажатия.");
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
