@@ -23,7 +23,7 @@ public class simplegui3 implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent e) {
         button.setLocation(100, 100); //This code do not change the button location if numClick++ (next row) used.               
-        numClick++;                   //If comment numClick++ the button changes location on click. Why location change if this row uncomment?
+        numClick++;                   //If comment numClick++ the button changes location on click. Why location doesn't changes if this row uncomment?
         button.setText("Has been clicked " + numClick + " times.");
     }
 }
