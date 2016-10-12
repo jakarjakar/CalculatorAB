@@ -1,19 +1,22 @@
 package calculator;
-//@Date Sep 26, 2016
 //@author Artsiom_Berazavik
 
 public class Concationation {
     
-//Constructor, wait for two Intager.
-    public Concationation (int a, int b) {
-    }
+    public double x; //int 0 by default
+    public double y; //int 0 by default
     
+   
     public Concationation () {
-        //создать конструктор вызываемый с пустыми параметрами и переадресовать создание конструкторы выше через this
+    }
+//Constructor, wait for two int
+    public Concationation (double x, double y) {
+        this.x = x;
+        this.y = y;
     }
     
-    public int add (int a, int b) {
-        return a + b;
+    public double add (double x, double y) {
+        return x + y;
     }
 
 }
