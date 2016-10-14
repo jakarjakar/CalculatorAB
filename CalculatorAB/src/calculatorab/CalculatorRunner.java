@@ -7,39 +7,61 @@ import java.util.Scanner;
 
 public class CalculatorRunner {
     public static void main(String[] args) {
-        Concationation c = new Concationation();
-        Scanner in = new Scanner(System.in);
-        
-        //Хелп после запуска, показыватся один раз
-        out.println("Калькулятор выполняет 4 действия: умножение(1) деление (2) сложение(3) вычитание(4) " + "\n" + "необходимую опцию введя 1, 2 или 3 соответсвтенно ");
-        
+
+        int userChoice = 1;
+        int userChoiceAttempt;
         double x;
         double y;
         boolean keepRunning = true;
         boolean condition;
+        
+        Arithmetic c = new Arithmetic();
+        Scanner in = new Scanner(System.in);
+        
+        out.println("Калькулятор. 4 действия на выбор" + "\n"
+                + "умножение(1)" + "\n" + "деление(2)" + "\n"
+                + "сложение(3)" + "\n" + "вычитание(4) " + "\n"
+                + "сделайте выбор, например 3 и нажмите ввод:" + "\n");
 
         try {
+            userChoiceAttempt = in.nextInt();
+            if (userChoiceAttempt < 1 || userChoiceAttempt > 5) {
+                out.println("Арифметическая операция по умолчанию (1) ");
+            } else { 
+                userChoice = userChoiceAttempt;
+            }
+        } catch (InputMismatchException ex) {
+            out.println("Введите 1, 2, 3 или 4");
+            ex.printStackTrace(System.err); }
+ 
+        try {
             while (keepRunning) {
-                out.println("\n" + "Введите первое число, например 3,14:");
+                switch (userChoice) {
+                    case 1: out.println("Будет выполнено умножение(1) двух чиел. "); break;
+                    case 2: out.println("Будет выполнено деление(2) одного числа на другое. "); break;
+                    case 3: out.println("Будет выполнено сложение(3) двух чисел. "); break;
+                    case 4: out.println("Будет выполнено вычитание(4) одного числа из второго. "); break;
+                }
+                out.println("\n" + "Введите первое число, например -3,14, и нажмите ввод:");
                 x = in.nextDouble();
-                out.println("Введи второе число:");
+                out.println("Введи второе число и нажмите ввод:");
                 y = in.nextDouble();
-                out.println("Результатом слажения " + x + " и " + y + " является " + c.add(x, y)+ "\n" + "Следующая итерация выбранного действия:" + "\n");
-                out.println("Продолжить работу (true/false)?");
+                    switch (userChoice) {
+                        case 3: out.println("Результатом слажения " + x + " и " + y + " является " + c.add(x, y)+ "\n"); break;
+                        case 1: out.println("Результатом умножения " + x + " и " + y + " является " + c.multiplicate(x, y)+ "\n"); break;
+                        case 2: out.println("Результатом деления " + x + " на " + y + " является " + c.division(x, y)+ "\n"); break;
+                        case 4: out.println("Результатом вычитания " + y + " из " + x + " является " + c.subtraction(x, y)+ "\n"); break;
+                    }
+                out.println("Продолжить работу (true/false)?:");
                 condition = in.nextBoolean();
                 if (!condition) {
                     keepRunning = false;
                 }
-            }
+            } // end of while
         } catch (InputMismatchException ex) {
             out.println("\n" + "Введите число при следующем запуске." + "\n");
             ex.printStackTrace(System.err);
-        }
-    }
-}
-//+Пользователь должен увидеть приглашение в командной строке с выбором 1 2 или 3
-//+обработчик ошибок позаботится о правильности ввода или об ошике показывающейся пользователю
-//после выбора операции будет предложено ввести 2 занчения, обработать ошибки тут тоже
-//в остальных методах также
-//отдельно обработать деление на о
-//обрабаттывать сложение, показывая только 8 разрядов после запятой
+        } //end of catch (inputMistatchException)
+    } //end of main
+} //end of class
+
