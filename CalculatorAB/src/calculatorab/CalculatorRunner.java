@@ -13,7 +13,7 @@ public class CalculatorRunner {
         double x;
         double y;
         boolean keepRunning = true;
-        boolean condition;
+        String ynEnter;
         
         Arithmetic c = new Arithmetic();
         Scanner in = new Scanner(System.in);
@@ -25,7 +25,7 @@ public class CalculatorRunner {
 
         try {
             userChoiceAttempt = in.nextInt();
-            if (userChoiceAttempt < 1 || userChoiceAttempt > 5) {
+            if (userChoiceAttempt < 1 || userChoiceAttempt >= 5) {
                 out.println("Арифметическая операция по умолчанию (1) ");
             } else { 
                 userChoice = userChoiceAttempt;
@@ -52,16 +52,21 @@ public class CalculatorRunner {
                         case 2: out.println("Результатом деления " + x + " на " + y + " является " + c.division(x, y)+ "\n"); break;
                         case 4: out.println("Результатом вычитания " + y + " из " + x + " является " + c.subtraction(x, y)+ "\n"); break;
                     }
-                out.println("Продолжить работу (true/false)?:");
-                condition = in.nextBoolean();
-                if (!condition) {
+                    
+                out.println("Повторить операцию с другими числами? (Y/n):");
+                try {
+                ynEnter = in.next();
+                    if ("n".equals(ynEnter)) {
                     keepRunning = false;
-                }
+                    out.println("Спасибо за внимание. ");
+                    } 
+                } catch (InputMismatchException ex) {
+                    out.println("Спасибо за внимание. ");
+                    ex.printStackTrace(System.err);} // end of catch 
             } // end of while
         } catch (InputMismatchException ex) {
             out.println("\n" + "Введите число при следующем запуске." + "\n");
-            ex.printStackTrace(System.err);
-        } //end of catch (inputMistatchException)
+            ex.printStackTrace(System.err);} //end of catch (inputMistatchException)
     } //end of main
 } //end of class
 
