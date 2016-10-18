@@ -13,17 +13,17 @@ public class MtrxRun {
         //Fill the First matrix
         int r0 = Mtrx.row();
         int c0 = Mtrx.column();
-        int [][] m0 = Mtrx.fill(r0, c0);
+        double [][] m0 = Mtrx.fill(r0, c0);
         Mtrx.print(m0);
         
         //Fill the Second matrix
         int r1 = Mtrx.row();
         int c1 = Mtrx.column();
-        int [][] m1 = Mtrx.fill(r1, c1);
+        double [][] m1 = Mtrx.fill(r1, c1);
         Mtrx.print(m1);
         
-        if (r0 == c1) {
-            int[][] m2 = Mult.result(m0, m1);
+        if (c0 == r1) {
+            double[][] m2 = Mult.result(m0, m1);
             Mtrx.print(m2);
         } else { 
             out.println("Невозможно умножить первую матрицу на вторую.");

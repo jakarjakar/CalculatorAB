@@ -6,8 +6,8 @@ import static java.lang.System.out;
 public class Mtrx {
      static Scanner in = new Scanner(System.in);
         
-    public static int[][] fill(int size) {
-        int [][] matrix0 = new int[size][size];
+    public static double[][] fill(int size) {
+        double [][] matrix0 = new double[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 out.println("Введите [" + i + ", " + j + "] элемент матрицы");
@@ -29,8 +29,8 @@ public class Mtrx {
         return column;
     }
 
-    public static int[][] fill(int row,int column) {
-        int [][] m = new int[row][column];
+    public static double[][] fill(int row,int column) {
+        double[][] m = new double[row][column];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
                 out.println("Введите [" + i + ", " + j + "] элемент матрицы");
@@ -40,7 +40,7 @@ public class Mtrx {
         return m;
     }
         
-    public static void print(int[][] mtrx) {
+    public static void print(double[][] mtrx) {
         out.println("Вы ввели матрицу: ");
         int r = mtrx.length;
         int c = mtrx[0].length;
