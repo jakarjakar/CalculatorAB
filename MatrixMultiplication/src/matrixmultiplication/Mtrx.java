@@ -41,7 +41,7 @@ public class Mtrx {
     }
         
     public static void print(double[][] mtrx) {
-        out.println("Вы ввели матрицу: ");
+        out.println("Матрица: ");
         int r = mtrx.length;
         int c = mtrx[0].length;
         for (int i = 0; i < r; i++) {

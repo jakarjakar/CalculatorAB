@@ -24,6 +24,7 @@ public class MtrxRun {
         
         if (c0 == r1) {
             double[][] m2 = Mult.result(m0, m1);
+            out.println("Результат: ");
             Mtrx.print(m2);
         } else { 
             out.println("Невозможно умножить первую матрицу на вторую.");
